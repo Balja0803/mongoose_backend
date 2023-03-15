@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const getMovies = require("../services/getMovies-service.js");
-const movies = require("../model/movie.js");
+const getMovies = require("../services/movies-service.js");
 
 router.get("/", async (req, res) => {
   console.log("get MOVIES reqiest");
-  const getMovies = await movies.find({}).limit(1);
-  console.log(getMovies);
+  const { query } = req;
+  const result = await getMovies(query.limit || 5);
+
   try {
-    res.status(200).send(getMovies);
+    res.status(200).send(result);
   } catch (error) {
     res.status(500).send(error);
   }

@@ -7,6 +7,7 @@ const movieSchema = new mongoose.Schema(
     genres: Array,
     runtime: Number,
     cast: Array,
+    num_mflix_comments: Number,
     poster: String,
     title: String,
     fullplot: String,
