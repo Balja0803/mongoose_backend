@@ -10,12 +10,13 @@ const getMovies = async (limit) => {
     });
 };
 
-// const addMovie = async (values) => {
-//   const props = Object.keys(movies.schema.tree);
+const addMovie = async (values) => {
+  const props = Object.keys(movies.schema.tree);
 
-//   const [fields] = await movies.insertOne({ values });
-//   return fields;
-// };
+  return await movies.insertOne({ values }).then((res) => {
+    return res;
+  });
+};
 
 module.exports = getMovies;
 // module.exports = addMovie;
