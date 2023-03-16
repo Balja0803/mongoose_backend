@@ -1,1 +1,30 @@
-get http://localhost:3636/movies
+get http://localhost:3636/movies?3 HTTP/1.1
+
+###
+
+post http://localhost:3636/movies/add HTTP/1.1
+Content-Type: application/json
+
+{
+    "_id": null,
+    "genres": ["horror", "comedy", "drama"],
+    "runtime": 124,
+    "cast": ["dorj", "dulmaa", "gonchig"],
+    "num_mflix_comments": null,
+    "poster": null,
+    "title": "back to Huwsgul",
+    "fullplot": "3 friends take a vacation to Lake huwsgul",
+    "languages": ["mongolian", "english", "japanese", "korean"],
+    "released": "2022-03-12",
+    "directors": "Steven Spielberg",
+    "writers": "Keanu Reeves",
+    "awards": "golden globes best pictures",
+    "year": 2022,
+    "imdb": 7.8,
+    "countries": ["usa", "mongolia"],
+    "type": "romance",
+    "tomatoes": {"rate": "potatoes"}
+
+
+
+}

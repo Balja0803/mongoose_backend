@@ -2,16 +2,20 @@ const movies = require("../model/movie.js");
 const mongoose = require("mongoose");
 
 const getMovies = async (limit) => {
-  const [fields] = await movies.find({}).limit(limit);
-  return fields;
+  return await movies
+    .find({})
+    .limit(limit)
+    .then((res) => {
+      return res;
+    });
 };
 
-const addMovie = async (values) => {
-  const props = mongoose.movies(Object.keys);
+// const addMovie = async (values) => {
+//   const props = Object.keys(movies.schema.tree);
 
-  const [fields] = await movies.insertOne({});
-  return fields;
-};
+//   const [fields] = await movies.insertOne({ values });
+//   return fields;
+// };
 
 module.exports = getMovies;
-module.exports = addMovie;
+// module.exports = addMovie;
